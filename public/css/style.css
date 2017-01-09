@@ -1,0 +1,25 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif;
+    color: #cc0000
+}
+
+.w3-navbar, h1, button {
+    font-family: "Montserrat", sans-serif
+}
+
+.w3-red, .w3-hover-red:hover {
+    background-color: #cc0000!important
+}
+
+#game {
+    margin: auto !important;
+    margin-top: 2% !important;
+    /*border: 4px solid;*/
+}
+
+img {
+    vertical-align: middle;
+    margin-top: 7.5%;
+    width: 50%;
+    height: 50%
+}

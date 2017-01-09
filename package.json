@@ -1,0 +1,15 @@
+{
+  "name": "webkingz",
+  "version": "1.0.0",
+  "description": "A Web-based version of everyone's favorite card game, Kings!",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongodb": "^2.2.15",
+    "push.js": "0.0.11",
+    "socket.io": "^1.7.1",
+    "util": "^0.10.3"
+  }
+}

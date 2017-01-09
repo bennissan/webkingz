@@ -1,0 +1,94 @@
+<html>
+
+<head>
+
+<title> WebKingz </title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<script type="text/javascript" src="/js/jquery.js"> </script>
+<script type="text/javascript" src="/js/menuToggle.js"> </script>
+
+</head>
+
+<body>
+<!-- Navbar -->
+<ul class="w3-navbar w3-red w3-card-2 w3-left-align w3-large">
+    <li class="w3-hide-medium w3-hide-large w3-opennav w3-right"><a class="w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a></li>
+    <li><a href="index.html" class="w3-padding-large w3-white scroll"> WebKingz </a></li>
+    <li class="w3-hide-small"><a href="game.html" class="w3-padding-large w3-hover-white scroll">Play the Game!</a></li>
+    <li class="w3-hide-small"><a href="changerulez.html" class="w3-padding-large w3-hover-white scroll">Change the Rulez!</a></li>
+    <li class="w3-hide-small"><a href="submitrulez.html" class="w3-padding-large w3-hover-white scroll">Submit New Rulez!</a></li>
+</ul>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium" style="margin-top:51px">
+    <ul class="w3-navbar w3-left-align w3-large w3-black">
+        <li><a class="w3-padding-large" href="game.html">Play the Game!</a></li>
+        <li><a class="w3-padding-large" href="changerulez.html">Change the Rulez!</a></li>
+        <li><a class="w3-padding-large" href="submitrulez.html">Submit New Rulez!</a></li>
+    </ul>
+</div>
+
+<div class="w3-content">
+    <h1 class="w3-center"> Submit New Rulez! </h1>
+
+    <form id="rules-form" class="w3-container">
+        Enter a Name for your Rule Zet:  <input type="text" class="w3-input" name="rule_name" />
+        <br>
+        Enter a Rule for the 2 Card:  <input type="text" class="w3-input" name="rule_2" />
+        <br>
+        Enter a Rule for the 3 Card:  <input type="text" class="w3-input" name="rule_3" />
+        <br>
+        Enter a Rule for the 4 Card:  <input type="text" class="w3-input" name="rule_4" />
+        <br>
+        Enter a Rule for the 5 Card:  <input type="text" class="w3-input" name="rule_5" />
+        <br>
+        Enter a Rule for the 6 Card:  <input type="text" class="w3-input" name="rule_6" />
+        <br>
+        Enter a Rule for the 7 Card:  <input type="text" class="w3-input" name="rule_7" />
+        <br>
+        Enter a Rule for the 8 Card:  <input type="text" class="w3-input" name="rule_8" />
+        <br>
+        Enter a Rule for the 9 Card:  <input type="text" class="w3-input" name="rule_9" />
+        <br>
+        Enter a Rule for the 10 Card:  <input type="text" class="w3-input" name="rule_10" />
+        <br>
+        Enter a Rule for the Jack Card:  <input type="text" class="w3-input" name="rule_11" />
+        <br>
+        Enter a Rule for the Queen Card:  <input type="text" class="w3-input" name="rule_12" />
+        <br>
+        Enter a Rule for the King Card:  <input type="text" class="w3-input" name="rule_13" />
+        <br>
+        Enter a Rule for the Ace Card:  <input type="text" class="w3-input" name="rule_14" />
+        <br>
+        <button id="submit-button" class="w3-btn w3-red" type="button">Submit</button>
+    </form>
+    <p class="w3-center"> WebKingz is for ages 21 and up only.  Please drink responsibly. </p>
+</div>
+
+</body>
+
+<script>
+
+$('#submit-button').click(function() {
+    var data = $('#rules-form').serialize();
+    $.ajax({
+          type: "POST",
+          url: "https://webkingz.herokuapp.com/submit.json",
+          contentType: 'application/x-www-form-urlencoded',
+          data: data
+        });
+});
+
+</script>
+
+</html>
+
